@@ -14,6 +14,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var statePicker: UIPickerView!
     @IBOutlet weak var statePickerBtn: UIButton!
     
+    @IBOutlet weak var fullNameLabel: UILabel!
+    @IBOutlet weak var fullNameTextField: UITextField!
+    @IBOutlet weak var streetAddressLabel: UILabel!
+    @IBOutlet weak var streetAddressTextField: UITextField!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var zipCodeLabel: UILabel!
+    @IBOutlet weak var countryTextField: UITextField!
+    @IBOutlet weak var zipCodeTextField: UITextField!
+    @IBOutlet weak var buyNowContainerView: UIView!
+    
     //MARK: PROPERTIES
     let states = ["Alaska", "Arkansas", "California","Maine"]
     var hasStateBtnPressed = false
@@ -46,6 +58,11 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         statePickerBtn.setTitle(states[row], for: .normal)
         statePicker.isHidden = true
+        countryLabel.isHidden = false
+        countryTextField.isHidden = false
+        zipCodeLabel.isHidden = false
+        zipCodeTextField.isHidden = false
+        buyNowContainerView.isHidden = false
     }
 }
 
@@ -58,5 +75,25 @@ extension ViewController {
             hasStateBtnPressed = true
             statePickerBtn.setTitle(states[0], for: .normal)
         }
+        countryLabel.isHidden = true
+        countryTextField.isHidden = true
+        zipCodeLabel.isHidden = true
+        zipCodeTextField.isHidden = true
+        buyNowContainerView.isHidden = true
+    }
+    
+    @IBAction func buyNowPressed(_ sender: Any) {
+        fullNameLabel.isHidden = true
+        fullNameTextField.isHidden = true
+        streetAddressLabel.isHidden = true
+        streetAddressTextField.isHidden = true
+        cityLabel.isHidden = true
+        cityTextField.isHidden = true
+        statePickerBtn.isHidden = true
+        countryLabel.isHidden = true
+        countryTextField.isHidden = true
+        zipCodeLabel.isHidden = true
+        zipCodeTextField.isHidden = true
+        buyNowContainerView.isHidden = true
     }
 }
