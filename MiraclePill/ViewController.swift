@@ -13,7 +13,10 @@ class ViewController: UIViewController {
     //MARK: OUTLETS
     @IBOutlet weak var statePicker: UIPickerView!
     @IBOutlet weak var statePickerBtn: UIButton!
-    
+    @IBOutlet weak var redPillImageView: UIImageView!
+    @IBOutlet weak var redPillLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var dividerView: UIView!
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var fullNameTextField: UITextField!
     @IBOutlet weak var streetAddressLabel: UILabel!
@@ -25,6 +28,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var countryTextField: UITextField!
     @IBOutlet weak var zipCodeTextField: UITextField!
     @IBOutlet weak var buyNowContainerView: UIView!
+    @IBOutlet weak var successImageView: UIImageView!
     
     //MARK: PROPERTIES
     let states = ["Alaska", "Arkansas", "California","Maine"]
@@ -83,6 +87,10 @@ extension ViewController {
     }
     
     @IBAction func buyNowPressed(_ sender: Any) {
+        redPillLabel.isHidden = true
+        redPillImageView.isHidden = true
+        priceLabel.isHidden = true
+        dividerView.isHidden = true
         fullNameLabel.isHidden = true
         fullNameTextField.isHidden = true
         streetAddressLabel.isHidden = true
@@ -95,5 +103,6 @@ extension ViewController {
         zipCodeLabel.isHidden = true
         zipCodeTextField.isHidden = true
         buyNowContainerView.isHidden = true
+        successImageView.isHidden = false
     }
 }
